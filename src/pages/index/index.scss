@@ -1,0 +1,15 @@
+.app-list{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.app-item{
+  width: 100%;
+  color: #FFF;
+  background-color: #008CEE;
+  font-size: 32px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 20px 0;
+  text-align: center;
+}
