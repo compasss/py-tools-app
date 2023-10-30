@@ -9,7 +9,7 @@
     "css": "sass"
   },
   "scripts": {
-    "build:weapp": "taro build --type weapp",
+    "build:weapp": "taro build --type weapp --mode prod",
     "build:swan": "taro build --type swan",
     "build:alipay": "taro build --type alipay",
     "build:tt": "taro build --type tt",
@@ -53,7 +53,7 @@
     "@tarojs/taro": "3.6.18",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "taro-ui": "^3.1.1"
+    "taro-ui": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",

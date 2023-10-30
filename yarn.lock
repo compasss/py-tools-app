@@ -11261,7 +11261,7 @@ tar-stream@^1.5.2:
     to-buffer "^1.1.1"
     xtend "^4.0.0"
 
-taro-ui@^3.1.1:
+taro-ui@^3.1.0:
   version "3.1.1"
   resolved "https://registry.npmmirror.com/taro-ui/-/taro-ui-3.1.1.tgz#526dafcf9b0f24b4551080cbd2e0b31d9c0ab84d"
   integrity sha512-mbVeBhguyVPr+FLyrlT+ABnpQIuqRB/xpKKZxbnpaCg8W2RDM7CKQW7VPehfzqD+jW57X21b0bcD2ALYBhQSQg==

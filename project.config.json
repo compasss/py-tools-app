@@ -2,9 +2,9 @@
   "miniprogramRoot": "./dist",
   "projectname": "py-tools-app",
   "description": "py tools app",
-  "appid": "touristappid",
+  "appid": "wxe3e70ded47f38717",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": false,
     "enhance": false,
     "compileHotReLoad": false,
