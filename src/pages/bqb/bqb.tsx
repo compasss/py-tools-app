@@ -1,16 +1,25 @@
 import { View, ScrollView, Picker, ITouchEvent, Image, Text } from '@tarojs/components'
-import { AtSearchBar, AtList, AtListItem } from 'taro-ui'
+import { AtList, AtListItem } from 'taro-ui'
 import { useState } from "react";
 import Taro, { useLoad, useReady } from '@tarojs/taro'
+import AtSearchBar from '@/components/search-bar/search-bar'
 import './bqb.scss'
 
 interface BqbItem {
+  id?: number,
   name: string,
   fileName: string,
   url: string,
   category: string,
   createAt: Date,
   modifyAt: Date
+}
+
+interface ImageReq {
+  page: number,
+  pageSize: number,
+  str?: string | number,
+  category?: string | number
 }
 
 export default function Bqb() {
@@ -52,7 +61,7 @@ export default function Bqb() {
     Taro.showLoading({
       title: '加载中',
     })
-    let query = {
+    let query: ImageReq = {
       page: more ? page + 1 : 1,
       pageSize: 20
     }
@@ -108,8 +117,8 @@ export default function Bqb() {
     }
   }
 
-  function showPicture(ev, url) :void {
-    let images:Array<string> = imageList.map(it => `${process.env.TARO_APP_QINIU_URL}/${it.url}`)
+  function showPicture(_ev: ITouchEvent, url:string) :void {
+    let images:Array<string> = imageList.map((it: BqbItem) => `${process.env.TARO_APP_QINIU_URL}/${it.url}`)
     Taro.previewImage({
       current: `${process.env.TARO_APP_QINIU_URL}/${url}`, // 当前显示图片的http链接
       urls: images // 需要预览的图片http链接列表
@@ -129,7 +138,7 @@ export default function Bqb() {
       </View>
       <ScrollView style={{'height': scrollHigh}} scrollY scrollWithAnimation enableBackToTop onScrollToLower={handleScrollToLower}>
         <View className='bqb-list'>
-          {imageList.map(item => {
+          {imageList.map((item: BqbItem) => {
             return (
               <View className='bqb-item' key={item.id} onClick={event => showPicture(event, item.url)}>
                 <Image src={'https://q.265265.xyz/' + item.url} className='bqb-img' />
