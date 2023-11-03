@@ -1,4 +1,4 @@
-import {ITouchEvent, View} from '@tarojs/components'
+import {View} from '@tarojs/components'
 import Taro, { useLoad } from '@tarojs/taro'
 import './index.scss'
 
@@ -8,7 +8,7 @@ export default function Index() {
     console.log('Page loaded.')
   })
 
-  function handleClick(path: string, ev: ITouchEvent){
+  function handleClick(path: string): void{
       Taro.navigateTo({
           url: path
       })
@@ -16,7 +16,7 @@ export default function Index() {
 
   return (
     <View className='app-list'>
-        <View className='app-item' onClick={event => handleClick('/pages/bqb/bqb', event)}>表情包</View>
+        <View className='app-item' onClick={() => handleClick('/pages/bqb/bqb')}>表情包</View>
         <View className='app-item'>门禁</View>
     </View>
   )

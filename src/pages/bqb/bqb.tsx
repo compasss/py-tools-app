@@ -5,23 +5,6 @@ import Taro, { useLoad, useReady } from '@tarojs/taro'
 import AtSearchBar from '@/components/search-bar/search-bar'
 import './bqb.scss'
 
-interface BqbItem {
-  id?: number,
-  name: string,
-  fileName: string,
-  url: string,
-  category: string,
-  createAt: Date,
-  modifyAt: Date
-}
-
-interface ImageReq {
-  page: number,
-  pageSize: number,
-  str?: string | number,
-  category?: string | number
-}
-
 export default function Bqb() {
 
   const [categoryList, setCategoryList] = useState([])
